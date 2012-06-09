@@ -1,0 +1,2 @@
+org.jopas.JopasLabel_componentAdapter
+org.jopas.JopasLabel

@@ -13,6 +13,46 @@ import java.util.Vector;
 public class PromVect {
     
     private Vector<Double> Prom;
+    private double[] Promd;
+    
+    
+    public PromVect(double[] p1,double[] p2,double[] p3,double[] p4,double[] p5,double[] p6){
+        int N1 = p1.length;
+        int N2 = p2.length;
+        int N3 = p3.length;
+        int N4 = p4.length;
+        int N5 = p5.length;
+        int N6 = p6.length;
+
+        
+        int M1=Math.max(N1,N2);
+        int M2=Math.max(N3, N4);
+        int M3=Math.max(N5, N6);
+        
+        int M4=Math.max(M1, M2);
+        int Max = Math.max(M3,M4);
+       
+        Promd = new double[Max];
+        double aux = 0.0;
+        for (int i=0;i<Max;i++){
+            if(i<N1)
+                aux+= p1[i];
+            if(i<N2)
+                aux+= p2[i];
+            if(i<N3)
+                aux+= p3[i];
+            if(i<N4)
+                aux+= p4[i];
+            if(i<N5)
+                aux+= p5[i];
+            if(i<N6)
+                aux+= p6[i];
+            Promd[i]=aux/6.0;
+            aux=0.0; 
+        }
+    }
+    
+            
     
     public PromVect(Vector<Double> P1,Vector<Double> P2,Vector<Double> P3,Vector<Double> P4,Vector<Double> P5,Vector<Double> P6,Vector<Double> P7,Vector<Double> P8)
     {
@@ -56,19 +96,26 @@ public class PromVect {
         
         
     }
+    public int tam(){
+        return(Prom.size());
+    }
     
-    public Vector<Double> mostrar(){
+    public int tamaniod(){
+        return(Promd.length);
+    }
+    
+    public Vector<Double> get(){
+   
         return (Prom);
-        
+    }
+    public double[] getdouble(){
+         double [] tempArray = new double[Prom.size()];
+            for(int i = 0; i <Prom.size();i++)
+                tempArray[i]=(Prom.get(i));
+        return(tempArray);
     }
     
-    public double[] get(){
-        double[] p = {};
-        
-        for(int i=0;i<Prom.size();i++)
-        p[i]=Prom.elementAt(i);
-            return (p);
-        
-    }
-    
+public double[] getvectorDouble(){
+    return Promd;
+}
 }

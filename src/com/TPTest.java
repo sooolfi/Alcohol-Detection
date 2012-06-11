@@ -24,6 +24,7 @@ public class TPTest {
               
           //Ahora probamos con 4 frases 2 sobrias y 2 ebrias (gabi y mati)
          
+          System.out.print("Iniciando etapa de Testeo:..\n");
           String path1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x22.txt";
           String path1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y22.txt";
           String path2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x23.txt";

@@ -28,15 +28,14 @@ public class TPF
           
           //  EL orden es GUIDO-GABI-MATI-JULIO-MAXI-OSVA-MGUE-PABLO
           //Lo hacemos con una frase, si funciona dsps la idea es comparar con todas
-          
-
+         
           System.out.print("BIENVENIDOS AL DETECTOR DE ALCOHOLEMIA..." + "\n");
+          
           //Entremaos para realizar las plantillas
+          TPTraining prueba = new TPTraining("frase2");
+          //Cargamos los testeos   
+          TPTest test = new TPTest();
           
-          //TPTraining prueba = new TPTraining("frase2");
-         //Cargamos los testeos
-          
-       //   TPTest test = new TPTest();
           //cargamos los path para leer plantillas y pruebas
           String F0Ebrio = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/F0Ebrio.txt";
           String F0Sobrio = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/F0Sobrio.txt";
@@ -44,25 +43,20 @@ public class TPF
           String LTASSobrio = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/LTASSobrio.txt";
           String radio = "10"; //radio de busqueda
           
-          
           String pathF0S1 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/sobrio1.txt";
           String pathF0E1 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/ebrio1.txt";
-          
           String pathF0S2 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/sobrio2.txt";
-          String pathF0E2 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/ebrio1.txt";
-          
+          String pathF0E2 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/ebrio1.txt";          
           String pathLS1 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/sobrio1L.txt";
           String pathLE1 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/ebrio1L.txt";
-          
           String pathLS2 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/sobrio2L.txt";
           String pathLE2 = "/home/guido/NetBeansProjects/TPFINAL/src/txt/Plantillas/ebrio1L.txt";
           
+          System.out.print("Normalizando y calculando distancias con FDTW...\n");
           
           //Comparamos.. 
-          
           //sujeto N -ESTADO-plant-comp  
           //1SF0S significa sujeto 1 sobrio comparando f0 con plantilla sonbria
-          
           //sujeto 1 path terminados con 1
           FastDtwTest sujeto1SF0S = new FastDtwTest(pathF0S1,F0Sobrio,radio);
           FastDtwTest sujeto1SF0E = new FastDtwTest(pathF0S1,F0Ebrio,radio);
@@ -126,7 +120,7 @@ public class TPF
           FastDtwTest sujeto2ELTASE = new FastDtwTest(pathLE2,LTASEbrio,radio);
           
           System.out.print("=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
-          System.out.print("Primera prueba Sujeto 1\n");
+          System.out.print("Primera prueba Sujeto 2\n");
           System.out.print("Distancia entre F0\n");
           System.out.print("Real: Sobrio...\n");
           System.out.print("Distancia a plantilla sobrio...: ");

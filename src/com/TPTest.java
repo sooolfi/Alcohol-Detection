@@ -20,15 +20,15 @@ import java.io.IOException;
  */
 public class TPTest {
     
-    public TPTest(){
+    public TPTest(String Frase){
               
           //Ahora probamos con 4 frases 2 sobrias y 2 ebrias (gabi y mati)
          
           System.out.print("Iniciando etapa de Testeo:..\n");
-          String path1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x22.txt";
-          String path1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y22.txt";
-          String path2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x23.txt";
-          String path2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y23.txt";
+          String path1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x22.txt";
+          String path1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y22.txt";
+          String path2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x23.txt";
+          String path2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y23.txt";
           
           //Calculo la F0 de la senial de entrada y calculo la distancia con FDTW
           LeerTxt file1 = new LeerTxt(path1S);

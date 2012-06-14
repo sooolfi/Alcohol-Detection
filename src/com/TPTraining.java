@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package com;
+
 import com.util.FuncionesOctave;
 import com.util.LeerTxt;
 import com.util.PromVect;
@@ -23,7 +24,7 @@ import java.io.IOException;
 /**
  *
  * @author guido
- * Se implementara para  la frase 2, habria que hacer lo mismo para todas las frases
+ *
  */
 public class TPTraining {
    
@@ -44,20 +45,20 @@ public class TPTraining {
         System.out.print("Fase Entrenamiento para generacion de platillas...\n");
         
         //Sobrio
-        String filepath1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x21.txt";
-        String filepath2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x24.txt";
-        String filepath3S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x25.txt";
-        String filepath4S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x26.txt";
-        String filepath5S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x27.txt";
-        String filepath6S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/x28.txt";
+        String filepath1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x21.txt";
+        String filepath2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x24.txt";
+        String filepath3S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x25.txt";
+        String filepath4S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x26.txt";
+        String filepath5S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x27.txt";
+        String filepath6S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x28.txt";
         
         //Ebrio
-        String filepath1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y21.txt";
-        String filepath2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y24.txt";
-        String filepath3E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y25.txt";
-        String filepath4E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y26.txt";
-        String filepath5E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y27.txt";
-        String filepath6E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/frase2/y28.txt";
+        String filepath1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y21.txt";
+        String filepath2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y24.txt";
+        String filepath3E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y25.txt";
+        String filepath4E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y26.txt";
+        String filepath5E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y27.txt";
+        String filepath6E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y28.txt";
         
         //cargo archivos en double[]
         LeerTxt file1 = new LeerTxt(filepath1S);

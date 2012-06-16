@@ -2,22 +2,6 @@
 package com;
 
 
-//
-//import com.util.FuncionesOctave;
-//import com.util.LeerTxt;
-//import dk.ange.octave.*;
-//import dk.ange.octave.OctaveEngine.*;
-//import dk.ange.octave.OctaveEngineFactory.*;
-//import dk.ange.octave.type.OctaveDouble.*;
-//import dk.ange.octave.exception.*;
-//import dk.ange.octave.exec.*;
-//import dk.ange.octave.type.Octave;
-//import dk.ange.octave.type.OctaveDouble;
-//import dk.ange.octave.type.OctaveString;
-//import java.util.Vector;
-//import com.util.PromVect;
-//import dk.ange.octave.type.OctaveComplex;
-
 
 public class TPF
 {
@@ -69,7 +53,7 @@ public class TPF
           
          
           String resultado = "";
-          System.out.print("Frase numero "+ indice);
+          System.out.print("Frase numero "+ indice + "\n");
           System.out.print("Primera prueba Sujeto 1\n");
           
           //System.out.print("Distancia entre F0\n");
@@ -79,51 +63,53 @@ public class TPF
           
           
           if(sujeto1SF0S.getDistance() <sujeto1SF0E.getDistance())
-              if(sujeto1SLTASS.getDistance() < sujeto1SLTASE.getDistance() )
+           //   if(sujeto1SLTASS.getDistance() < sujeto1SLTASE.getDistance() )
                 resultado = "SOBRIO";
                       
           else
                 resultado = "EBRIO";
+          
           System.out.print("Resultado: "+resultado + "\n");
           System.out.print("Real: Ebrio...\n");
           
           if(sujeto1EF0E.getDistance() < sujeto1EF0S.getDistance())
-              if(sujeto1ELTASE.getDistance() < sujeto1ELTASS.getDistance() )
+            //  if(sujeto1ELTASE.getDistance() < sujeto1ELTASS.getDistance() )
                 resultado = "SOBRIO";
                       
           else
                 resultado = "EBRIO";
+          
           System.out.print("Resultado: "+resultado + "\n");
-//          System.out.print(sujeto1SF0S.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto1SF0E.getDistance());
-//          System.out.print("\n");
-//          
-//          
-//          System.out.print("Real: Ebrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto1EF0S.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto1EF0E.getDistance());
-//          System.out.print("\n");
-//          
-//          System.out.print("Distancia LTAS.\n");
-//          System.out.print("Real: Sobrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto1SLTASS.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto1SLTASE.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Real: Ebrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto1ELTASS.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto1ELTASE.getDistance());
-//          System.out.print("\n");
+          System.out.print(sujeto1SF0S.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto1SF0E.getDistance());
+          System.out.print("\n");
+          
+          
+          System.out.print("Real: Ebrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto1EF0S.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto1EF0E.getDistance());
+          System.out.print("\n");
+          
+          System.out.print("Distancia LTAS.\n");
+          System.out.print("Real: Sobrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto1SLTASS.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto1SLTASE.getDistance());
+          System.out.print("\n");
+          System.out.print("Real: Ebrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto1ELTASS.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto1ELTASE.getDistance());
+          System.out.print("\n");
           
           //sujeto 2 path terminados con 2
           
@@ -141,51 +127,52 @@ public class TPF
           FastDtwTest sujeto2ELTASE = new FastDtwTest(pathLE2,LTASEbrio,radio);
           
           System.out.print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
-//          System.out.print("Primera prueba Sujeto 2\n");
-//          System.out.print("Distancia entre F0\n");
-//          System.out.print("Real: Sobrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto2SF0S.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto2SF0E.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Real: Ebrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto2EF0S.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto2EF0E.getDistance());
-//          System.out.print("\n");
-//          
-//          System.out.print("Distancia LTAS.\n");
-//          System.out.print("Real: Sobrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto2SLTASS.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto2SLTASE.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Real: Ebrio...\n");
-//          System.out.print("Distancia a plantilla sobrio...: ");
-//          System.out.print(sujeto2ELTASS.getDistance());
-//          System.out.print("\n");
-//          System.out.print("Distancia a plantilla ebrio ...: ");
-//          System.out.print(sujeto2ELTASE.getDistance());
-//          System.out.print("\n");
-//          
+          System.out.print("Primera prueba Sujeto 2\n");
+          System.out.print("Distancia entre F0\n");
+          System.out.print("Real: Sobrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto2SF0S.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto2SF0E.getDistance());
+          System.out.print("\n");
+          System.out.print("Real: Ebrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto2EF0S.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto2EF0E.getDistance());
+          System.out.print("\n");
+          
+          System.out.print("Distancia LTAS.\n");
+          System.out.print("Real: Sobrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto2SLTASS.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto2SLTASE.getDistance());
+          System.out.print("\n");
+          System.out.print("Real: Ebrio...\n");
+          System.out.print("Distancia a plantilla sobrio...: ");
+          System.out.print(sujeto2ELTASS.getDistance());
+          System.out.print("\n");
+          System.out.print("Distancia a plantilla ebrio ...: ");
+          System.out.print(sujeto2ELTASE.getDistance());
+          System.out.print("\n");
+          
           System.out.print("Real: Sobrio...\n");
           if(sujeto2SF0S.getDistance() <sujeto2SF0E.getDistance())
-              if(sujeto2SLTASS.getDistance() < sujeto2SLTASE.getDistance() )
+            //  if(sujeto2SLTASS.getDistance() < sujeto2SLTASE.getDistance() )
                 resultado = "SOBRIO";
                       
           else
                 resultado = "EBRIO";
+          
           System.out.print("Resultado: "+resultado + "\n");
           System.out.print("Real: Ebrio...\n");
           
            if(sujeto2EF0E.getDistance() < sujeto2EF0S.getDistance())
-              if(sujeto2ELTASE.getDistance() < sujeto2ELTASS.getDistance() )
+             // if(sujeto2ELTASE.getDistance() < sujeto2ELTASS.getDistance() )
                 resultado = "SOBRIO";
                       
           else

@@ -39,6 +39,7 @@ public class TPTraining {
 //    private double[] plantillaF2S;
     
     public TPTraining(String Frase){
+        
         //en este caso leeremos la frase 2
         //usamos 6 muestras para generar la plantilla y las otras 2 para prueba
         //gabi y mati para probar -> x22 y x23
@@ -46,16 +47,16 @@ public class TPTraining {
         
         //Sobrio
         String filepath1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x21.txt";
-        String filepath2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x24.txt";
-        String filepath3S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x25.txt";
+        String filepath2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x23.txt";
+        String filepath3S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x24.txt";
         String filepath4S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x26.txt";
         String filepath5S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x27.txt";
         String filepath6S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x28.txt";
         
         //Ebrio
         String filepath1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y21.txt";
-        String filepath2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y24.txt";
-        String filepath3E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y25.txt";
+        String filepath2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y23.txt";
+        String filepath3E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y24.txt";
         String filepath4E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y26.txt";
         String filepath5E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y27.txt";
         String filepath6E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y28.txt";
@@ -137,14 +138,14 @@ public class TPTraining {
          
          OctaveDouble p = new OctaveDouble(plantillaF0S,plantillaF0S.length,1);
          octave.put("prueba",p);
-         octave.eval("figure(1)");
-         octave.eval("plot(prueba)");
-         octave.eval("drawnow()");
+//         octave.eval("figure(1)");
+//         octave.eval("plot(prueba)");
+//         octave.eval("drawnow()");
          OctaveDouble p2 = new OctaveDouble(plantillaF0E,plantillaF0E.length,1);
          octave.put("prueba2",p2);
-         octave.eval("figure(2)");
-         octave.eval("plot(prueba2)");
-         octave.eval("drawnow()");
+//         octave.eval("figure(2)");
+//         octave.eval("plot(prueba2)");
+//         octave.eval("drawnow()");
 
          //Cargo funcion 2 //calculo LTAS         
          FuncionesOctave function2= new FuncionesOctave(1);
@@ -180,14 +181,14 @@ public class TPTraining {
                  
          OctaveDouble p3 = new OctaveDouble(plantillaLTASS,plantillaLTASS.length,1);
          octave.put("prueba3",p3);
-         octave.eval("figure(3)");
-         octave.eval("plot(prueba3)");
-         octave.eval("drawnow()");
+//         octave.eval("figure(3)");
+//         octave.eval("plot(prueba3)");
+//         octave.eval("drawnow()");
          OctaveDouble p4 = new OctaveDouble(plantillaLTASE,1,plantillaLTASE.length);
          octave.put("prueba4",p4);
-         octave.eval("figure(4)");
-         octave.eval("plot(prueba4)");
-         octave.eval("drawnow()");   
+//         octave.eval("figure(4)");
+//         octave.eval("plot(prueba4)");
+//         octave.eval("drawnow()");   
          
          
          octave.close();

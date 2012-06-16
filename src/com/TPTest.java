@@ -27,8 +27,8 @@ public class TPTest {
           System.out.print("Iniciando etapa de Testeo:..\n");
           String path1S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x22.txt";
           String path1E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y22.txt";
-          String path2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x23.txt";
-          String path2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y23.txt";
+          String path2S = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/x25.txt";
+          String path2E = "/home/guido/NetBeansProjects/TPFINAL/src/txt/"+Frase+"/y25.txt";
           
           //Calculo la F0 de la senial de entrada y calculo la distancia con FDTW
           LeerTxt file1 = new LeerTxt(path1S);

@@ -95,16 +95,16 @@ public class FuncionesOctave {
         + "      if (k>cantidad_ventanas)                          \n "//
         + "        break;                                          \n "//
         + "      end                                               \n "//
-       // + "      auxiliar = x(1:10) ;       \n "//
+        + "      auxiliar = x(1:10) ;       \n "//
         + "      auxiliar = x(round(i+1):round(i+tamano_ventanas)-1) .* V;       \n "//
 
-//        + "      a  = [round(i+1), round(i+tamano_ventanas)];                    \n "//
-//        + "  no_exponencial = real(ifft(log(abs(fft(auxiliar))))); \n"//
-//        + "      y(k,:)  = exp( real( fft(no_exponencial)));       \n "//
-//        + "      y(k, 1:10) = 0;                                   \n "//
-//        + "      %y(k, round(tamano_ventanas-10):round(tamano_ventanas)) = 0;     \n "//
-//        + "      f1(k) = max(y(k, :));                             \n "//
-//        + "      k = k + 1;                                        \n "//
+        + "      a  = [round(i+1), round(i+tamano_ventanas)];                    \n "//
+        + "  no_exponencial = real(ifft(log(abs(fft(auxiliar))))); \n"//
+        + "      y(k,:)  = exp( real( fft(no_exponencial)));       \n "//
+        + "      y(k, 1:10) = 0;                                   \n "//
+        + "      %y(k, round(tamano_ventanas-10):round(tamano_ventanas)) = 0;     \n "//
+        + "      f1(k) = max(y(k, :));                             \n "//
+        + "      k = k + 1;                                        \n "//
         + "  end                                                   \n "//       
         + "endfunction\n" //
         + "";

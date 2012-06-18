@@ -21,6 +21,9 @@ public class FuncionesOctave {
             loadFunc3();
         if (numFuncion == 4)//F2 formant
             loadFunc4();
+        if (numFuncion == 5)//F0 autocorr
+            loadFunc5();   
+        
     
     }
     public String getString(){
@@ -95,16 +98,16 @@ public class FuncionesOctave {
         + "      if (k>cantidad_ventanas)                          \n "//
         + "        break;                                          \n "//
         + "      end                                               \n "//
-        + "      auxiliar = x(1:10) ;       \n "//
+       // + "      auxiliar = x(1:10) ;       \n "//
         + "      auxiliar = x(round(i+1):round(i+tamano_ventanas)-1) .* V;       \n "//
 
-        + "      a  = [round(i+1), round(i+tamano_ventanas)];                    \n "//
-        + "  no_exponencial = real(ifft(log(abs(fft(auxiliar))))); \n"//
-        + "      y(k,:)  = exp( real( fft(no_exponencial)));       \n "//
-        + "      y(k, 1:10) = 0;                                   \n "//
-        + "      %y(k, round(tamano_ventanas-10):round(tamano_ventanas)) = 0;     \n "//
-        + "      f1(k) = max(y(k, :));                             \n "//
-        + "      k = k + 1;                                        \n "//
+//        + "      a  = [round(i+1), round(i+tamano_ventanas)];                    \n "//
+//        + "  no_exponencial = real(ifft(log(abs(fft(auxiliar))))); \n"//
+//        + "      y(k,:)  = exp( real( fft(no_exponencial)));       \n "//
+//        + "      y(k, 1:10) = 0;                                   \n "//
+//        + "      %y(k, round(tamano_ventanas-10):round(tamano_ventanas)) = 0;     \n "//
+//        + "      f1(k) = max(y(k, :));                             \n "//
+//        + "      k = k + 1;                                        \n "//
         + "  end                                                   \n "//       
         + "endfunction\n" //
         + "";
@@ -144,5 +147,52 @@ public class FuncionesOctave {
         + "";
        
     }
+    private void loadFunc5() {
+        nomFunc = "" //    
+        +" function [frecuencias] = autocorrelacion(x)                                      \n"// 
+        +" fm=44100;                                                                        \n"//
+        +" dt = 1/fm;                                                                       \n"//
+        +" N = length(x);                                                                   \n"//
+        +" t = 0:dt:(N/fm)-dt;                                                              \n"//
+        +" ventana = hamming(256);                                                          \n"//
+        +" k = 1;                                                                           \n"//
+        +" j = 256;                                                                         \n"//
+        +" for i=1:128:N-256 % Saltos de 128 (La mitad de la longitud de cada ventana)      \n"//
+        +"  frame = x(i:j).*ventana’;                                                       \n"//
+        +"  y(k) = (norm( frame,2))^2;  % Energía                                           \n"//
+        +"  k = k+1;                                                                        \n"//
+        +"  j = j+128;                                                                      \n"//
+        +" end                                                                              \n"//
+        +" maximo = max(y);                                                                 \n"//
+        +" umbral = 0.2*maximo;                                                             \n"//
+        +" p = 1;                                                                           \n"//
+        +" j = 256;                                                                         \n"//
+        +" for i=1:128:N-256                                                                \n"//
+        +"  y1 = x(i:j).*ventana’;                                                          \n"//
+        +"  autoCorr = xcorr(y1);                                                           \n"//
+        +"  [maximo, tiempo ] = max(autoCorr);                                              \n"//
+        +"  autoCorr = autoCorr(tiempo:length(autoCorr)); % Tomamos los valores positivos   \n"//
+        +"  energia(p) = (norm(autoCorr,2))^2;                                              \n"//
+        +"  if energia(p) > umbral %Tomamos la parte donde esta la Fo (entre 100 y 500 Hz)  \n"//
+        +"    zzz = autoCorr(16:80);                                                        \n"//
+        +"    [wm, wt] = max(zzz);   % Calculamos el máximo                                 \n"//
+        +"    t1 = 0.002:dt:0.01; %1/100 = 0.01 y 1/500 = 0.002                             \n"//
+        +"    to = t1(wt);   % Calculamos el lugar                                          \n"//
+        +"    pitch = 1/to;    % Ahora la Fo es la inversa de este to                       \n"//
+        +"    frecuencias(p) = pitch;                                                       \n"//
+        +"  else                                                                            \n"//
+        +"   frecuencias(p) = 0; % Si es ruido, lo dejamos en 0                             \n"//
+        +"  end                                                                             \n"//
+        +"  j = j+128;                                                                      \n"//
+        +"  p = p+1;                                                                        \n"//
+        +" end                                                                              \n"//                                                     \n"//
+        + "endfunction\n" //
+        + "";
+        
+        
+        
+        
+    }
+    
     
 }
